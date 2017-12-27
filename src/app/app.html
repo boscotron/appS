@@ -1,0 +1,63 @@
+<!--<ion-nav [root]="rootPage"></ion-nav>-->
+
+<ion-split-pane [when]="splitPane.getSplitPane()">
+
+  <ion-menu [content]="content" >
+    <ion-header>
+      <ion-toolbar>
+        <ion-title><ion-icon name="reorder"></ion-icon> Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+   
+ 
+
+  
+     <ion-content>
+
+      <ion-card>
+        <ion-item>
+          <ion-avatar item-start>
+            <ion-icon name="contact"></ion-icon>
+          </ion-avatar>
+          <h2>{{nombreUsuario()}}</h2>
+        
+        </ion-item>
+
+       <ion-item>
+      <ion-label floating>Empresa</ion-label>
+      <ion-select (ionChange)='cambiarEmpresa()' [(ngModel)]="formulario.idEmpresa" interface="popover"  okText="Cambiar" cancelText="Cancelar">
+          <ion-option *ngFor="let empresa of empresas " value="{{empresa.id_empresa}}">
+                      {{empresa.nombre}}
+                  </ion-option>
+
+       
+      </ion-select>
+    </ion-item>
+
+        <ion-row>
+          <ion-col>
+           
+          </ion-col>
+        </ion-row>
+
+      </ion-card>
+    <ion-list>
+        <div *ngFor="let p of pagesView" (click)="openPage(p)">
+        <button menuClose ion-item>
+          <ion-icon name="{{p.icon}}"></ion-icon>
+          {{p.title}}
+        </button>
+      </div>
+        <button menuClose ion-item color="primary" (click)="logout()">Salir</button>
+    </ion-list>
+     </ion-content>
+
+  </ion-menu>
+
+
+
+  <ion-nav [root]="rootPage" main #content></ion-nav>
+</ion-split-pane>
+
+
+

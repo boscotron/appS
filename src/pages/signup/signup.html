@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Registrate</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-grid>
+    <ion-col col-sm-12 offset-md-4 col-md-4 offset-lg-5 col-lg-2>
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Nombre y apellido</ion-label>
+          <ion-input type="text"  [(ngModel)]="userData.name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input type="text"  [(ngModel)]="userData.email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Usuario</ion-label>
+          <ion-input type="text"  [(ngModel)]="userData.username"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="userData.password"></ion-input>
+        </ion-item>
+      </ion-list>
+      <button ion-button block color="primary" (click)="signup()">Registrate</button>
+      <button ion-button block color="primary" (click)="login()">Ingresa</button>
+    </ion-col>
+  </ion-grid>
+</ion-content>

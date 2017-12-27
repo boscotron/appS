@@ -1,0 +1,72 @@
+<!--
+  Generated template for the ModuloPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Administrador de API's</ion-title>
+  </ion-navbar>
+
+</ion-header> 
+
+
+<ion-content padding>	
+	<ion-row>
+		<p>
+			Módula para dar de alta empresas integradas a este Panel
+		</p>
+	</ion-row>
+	 <ion-item id="udpateBox">
+
+	<ion-row>
+		Nombre
+		<input type="text" [(ngModel)]="json_head.nombre">
+	</ion-row>
+	<div >
+		
+	</div>
+
+	
+	<ion-row>
+		<button ion-button color="energy" (click)="empresas_guardar()">Agregar empresa</button>
+	</ion-row>
+	 </ion-item>
+	<ion-grid>
+	  <ion-row>
+	    <ion-col col-6>
+	    	<ion-card *ngFor="let item of dataSet; let msgIndex = index">
+			    <ion-item>
+			      <ion-icon name="trash" item-right ></ion-icon>
+				    <ion-card-content>
+				     	<p [innerHTML]="item.nombre | linky"></p>
+					    <span>{{this.converTime(item.created) | amTimeAgo}}</span>
+				    </ion-card-content>
+			   	</ion-item>
+			  </ion-card>
+
+	    </ion-col>
+	  </ion-row>
+	  <ion-row>
+	    <ion-col col-6>
+	    	<ion-card *ngFor="let listaDB of listaDB; let msgIndex = index">
+			    <ion-item>
+			      <ion-icon name="trash" item-right ></ion-icon>
+				    <ion-card-content>
+				     	<p [innerHTML]="listaDB.nombre | linky"></p>
+					    <span>{{this.converTime(listaDB.created) | amTimeAgo}}</span>
+				    </ion-card-content>
+			   	</ion-item>
+			  </ion-card>
+	    </ion-col>
+	  </ion-row>
+	</ion-grid>
+	  
+
+</ion-content>
