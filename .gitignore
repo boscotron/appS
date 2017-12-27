@@ -1,3 +1,11 @@
+www
+
+.sourcemaps
+# Logs
+logs
+*.log
+
+
 # Logs
 logs
 *.log
